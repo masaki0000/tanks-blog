@@ -1,0 +1,138 @@
+.menu {
+  display: none;
+}
+
+.hmb {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+  background-color: #3584bb;
+
+  .span
+  {
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+
+    &::before {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 25px;
+      border-radius: 3px;
+      background-color: #ffffff;
+      position: absolute;
+      bottom: 8px;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 25px;
+      border-radius: 3px;
+      background-color: #ffffff;
+      position: absolute;
+      top: 8px;
+    }
+  }
+
+  .span_o
+  {
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0);
+
+    &::before {
+      display: block;
+      height: 3px;
+      width: 25px;
+      border-radius: 3px;
+      background-color: #ffffff;
+      position: absolute;
+      bottom: 0;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      display: block;
+      height: 3px;
+      width: 25px;
+      border-radius: 3px;
+      background-color: #ffffff;
+      position: absolute;
+      top: 0;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+
+
+.hmc {
+  min-width: 50%;
+  position: fixed;
+  top: 80px;
+  left: 100%;
+  z-index: 80;
+  background-color: #3583bb79;
+  transition: all 0.5s;
+
+  ul {
+    padding: 40px 10px 0;
+
+    li {
+      border-bottom: solid 1px #ffffff;
+      list-style: none;
+
+      a {
+        display: block;
+        width: 100%;
+        font-size: 150%;
+        box-sizing: border-box;
+        color:#ffffff;
+        text-decoration: none;
+        padding: 9px 30px 10px 0;
+        position: relative;
+
+        &::before {
+          content: "";
+          width: 7px;
+          height: 7px;
+          border-top: solid 2px #ffffff;
+          border-right: solid 2px #ffffff;
+          transform: rotate(45deg);
+          position: absolute;
+          right: 11px;
+          top: 16px;
+        }
+      }
+    }
+  }
+}
+
+.hmc_o
+{
+  /*メニューを画面内へ*/
+  left: 50%;
+}
+
+// スマホサイズ以下レスポンシブ
+@media screen and (max-width: 639px) {
+  .menu {
+    display: block;
+  }
+}
+

@@ -1,0 +1,270 @@
+/////////////////////////////
+//  通常の表示///////////
+.blog_card_wrapper {
+  $card_h: 300px;
+  $img_h: -webkit-calc(#{$card_h} * 0.6);
+  $img_h: calc(#{$card_h} * 0.6);
+  $text_h: -webkit-calc(100% - #{$img_h});
+  $text_h: calc(100% - #{$img_h});
+
+
+  min-height: 300px;
+  min-height: $card_h;
+  width: 310px;
+
+  margin-right: 10px;
+  margin-bottom: 60px;
+
+  .blog_card {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(146, 200, 209);
+    border-radius: 10px;
+    pointer-events:none;
+  
+    .card_img_wrapper {
+      height: 60%;
+      height: $img_h;
+
+      width: 100%;
+      display: block;
+      padding: 0.2em;
+      .card_img {
+          height: 100%;
+          width: 100%;
+          pointer-events:auto;
+          position: relative;
+      }
+    }
+    
+    &:hover {
+      .card_text {
+        background-position: left bottom;
+      }
+    }
+  
+    .card_text {
+      min-height: 40%;
+      height: $text_h;
+
+      width: 100%;
+      position: relative;
+      display: block;
+      margin: 0;
+      padding: 0 0.5em 1em;
+      border: none;
+      border-top: 1px solid #000;
+      border-color: none;
+      transition: all .5s ease-out;
+      border-radius: 0 0 10px 10px;
+      pointer-events:none;
+  
+      &_title {
+        display: inline-block;
+        max-height: 80%;
+        max-width: 100%; 
+        margin: 0;
+        padding: 5px;
+        font-size: 120%;
+        font-weight: bold;
+        color: black;
+        user-select: text;
+        pointer-events:auto;
+  
+        &:hover {
+          text-decoration: underline;
+          background-position: left bottom;
+        }
+      }
+  
+      &_date {
+        min-height: 20%;
+        margin-right: 7px;
+        margin-bottom: 3px;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        color: rgb(95, 95, 95);
+        font-size: 70%;
+        font-weight: normal;
+      }
+    }
+  
+    .other_color {
+      background: linear-gradient(to right, #77b489 50%, rgb(230, 230, 230) 50%);
+      border-left: 0.60em solid #77b489;
+      background-size: 300% 100.5%;
+      background-position: right bottom;
+      pointer-events: none;
+    }
+  
+    .program_color {
+      background: linear-gradient(to right, #777db4 50%, rgb(230, 230, 230) 50%);
+      border-left: 0.60em solid #777db4;
+      background-size: 300% 100.5%;
+      background-position: right bottom;
+      pointer-events: none;
+    }
+  
+    .gadget_color {
+      background: linear-gradient(to right, #b47777 50%, rgb(230, 230, 230) 50%);
+      border-left: 0.60em solid #b47777;
+      background-size: 300% 100.5%;
+      background-position: right bottom;
+      pointer-events: none;
+    }
+  }
+}
+
+/// 新着欄////////
+.new_blog_card_wrapper {
+  $card_h: 180px;
+  $img_h: -webkit-calc(#{$card_h} * 0.6);
+  $img_h: calc(#{$card_h} * 0.6);
+  $text_h: -webkit-calc(100% - #{$img_h});
+  $text_h: -webkit-calc(100% - #{$img_h});
+
+  min-height: 180px;
+  min-height: $card_h;
+  width: 192px;
+  margin-bottom: 20px;
+
+  .blog_card {
+    .card_img_wrapper {
+      height: $img_h;
+    }
+    .card_text {
+      height: $text_h;
+      &_title {
+        height: 100%;
+        font-size: 90%;
+        font-weight: normal;
+      }
+      &_date {
+        display: none;
+        font-size: 60%;
+      }
+    }
+  }
+}
+
+
+
+/////////////////////////////////
+// タブレットサイズ以下レスポンシブ
+/////////////////////////////////
+@media screen and (max-width: 1024px) {
+  .blog_card_wrapper {
+    // min-height: 165px;
+    width: 176px;
+
+    .blog_card {
+      // $img_h: 99px;
+
+      .card_img_wrapper {
+      }
+
+      .card_text {
+        &_title {
+          font-size: 90%;
+        }
+        &_date {
+          font-size: 60%;
+        }
+      }
+    }
+  }
+
+
+  .new_blog_card_wrapper {
+    // min-height: 100px;
+    width: 130px;
+    margin-bottom: 20px;
+  
+    .blog_card {
+      .card_text {
+        margin: 0;
+        padding: 0;
+
+        &_title {
+          margin: 0;
+          padding: 0 5px;
+          font-size: 70%;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+}
+
+
+
+////////////////////////////////
+// スマホサイズ以下レスポンシブ
+/////////////////////////////////
+@media screen and (max-width: 639px) {
+  .blog_card_wrapper {
+    $card_h: 180px;
+    $img_h: -webkit-calc(#{$card_h} * 0.6);
+    $img_h: calc(#{$card_h} * 0.6);
+    $text_h: -webkit-calc(100% - #{$img_h});
+    $text_h: calc(100% - #{$img_h});
+
+    min-height: 180px;
+    min-height: $card_h;
+    width: 240px;
+    margin-bottom: 30px;
+
+    .blog_card {
+      .card_img_wrapper {
+        height: $img_h;
+      }
+
+      .card_text {
+        height: $text_h;
+        &_title {
+          font-size: 90%;
+        }
+        &_date {
+          font-size: 60%;
+        }
+      }
+    
+    }
+  }
+
+
+  .new_blog_card_wrapper {
+    $card_h: 100px;
+    $img_h: -webkit-calc(#{$card_h} * 0.6);
+    $img_h: calc(#{$card_h} * 0.6);
+    $text_h: -webkit-calc(100% - #{$img_h});
+    $text_h: calc(100% - #{$img_h});
+
+    min-height: 100px;
+    min-height: $card_h;
+    width: 240px;
+
+    margin-bottom: 15px;
+    .blog_card {
+      .card_img_wrapper {
+        height: $img_h;
+      }
+
+      .card_text {
+        height: $text_h;
+
+        &_title {
+          height: 100%;
+          padding: 0 0 0 5px;
+          font-size: 70%;
+        }
+      }
+    }
+  }
+}
+
+
+
+

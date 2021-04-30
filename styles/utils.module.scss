@@ -1,0 +1,67 @@
+
+.util_cnt_wrap {
+  height: 100%;
+  width: 100%;
+  padding: 10px 10% 0 10%;
+  
+}
+
+.util_blog_category {
+  height: 100px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+
+  p {
+    display: inline;
+    line-height: 100px;
+    text-align: center;
+    font-size: 200%;
+    font-weight: bold;
+  }
+}
+
+.util_container {
+  display: flex;
+  padding: 0 3%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: stretch;
+  
+  &::after {
+    display: block;
+    content: "";
+    width: 320px;
+  }
+}
+
+.util_container_name {
+  border-bottom: double #000;
+  margin: 0 0 100px 0;
+  padding:0;
+}
+
+
+// タブレットサイズ以下レスポンシブ
+@media screen and (max-width: 1024px) {
+  .util_cnt_wrap {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+// スマホサイズ以下レスポンシブ
+@media screen and (max-width: 639px) {
+  .util_container {
+    justify-content: center;
+  }
+  
+  .util_container_name {
+    font-size: 120%;
+    margin-bottom: 50px;
+  }
+}

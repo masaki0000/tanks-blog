@@ -1,0 +1,78 @@
+.header {
+  width: 100%;
+  background-color: rgb(146, 200, 209);
+  margin: 0;
+  padding: 0;
+
+  .header_title_wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .header_title {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      .image_wrapper {
+        margin-top: 15px;
+        padding-right: 20px;
+      }
+  
+      a {
+        color: #000;
+        display: inline-block;
+        font-weight: bold;
+        font-size: 400%;
+        margin: 0;
+        padding: 0;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+  
+    }
+  }
+}
+// タブレットサイズ以下レスポンシブ
+@media screen and (max-width: 1024px) {
+  .header {
+    .header_title_wrapper {
+      .header_title {
+        .image_wrapper {
+          height: 48px;
+          width: 48px;
+          padding-right: 15px;
+        }
+        a {
+          font-size: 200%;
+        }
+      }
+    }
+  }
+}
+
+// スマホサイズ以下レスポンシブ
+@media screen and (max-width: 639px) {
+  .header {
+    .header_title_wrapper {
+      height: 80px;
+      justify-content: left;
+
+      .header_title {
+        padding-left: 5px;
+        .image_wrapper {
+          margin: 0 5px 0 0;
+          padding: 0;
+          height: 20px;
+          width: 20px;
+          
+        }
+        a {
+          font-size: 150%;
+        }
+      }
+    }
+  }
+}

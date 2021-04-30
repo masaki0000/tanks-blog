@@ -1,0 +1,20 @@
+
+.new_card_wrapper {
+  background-color: white;
+
+  .container_name {
+    border-bottom: double #000;
+    margin: 0 0 20px 0;
+    padding:0;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+    align-items: stretch;
+    // align-content: stretch;
+    padding-bottom: 30px;
+  }
+}

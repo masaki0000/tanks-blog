@@ -1,0 +1,59 @@
+.container {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  // background-color: rgb(243, 242, 242);
+  background-color: gainsboro;
+}
+
+.new_card_data {
+  margin: 30px 10% 50px 10%;
+}
+
+.main {
+  min-height: 100vh;
+  max-width: 100%;
+  margin: 0 10%;
+  padding: 0 0 50px 0;
+  background-color: #fff;
+
+
+
+  .backToHome {
+    margin-top: 10px;
+    padding: 10px 0 10px 20px;
+    border-top: 2px dotted #000;
+    border-bottom: 2px dotted #000;
+    font-weight: bold;
+    background-color: rgb(177, 212, 195);
+  }
+}
+
+// タブレットサイズ以下レスポンシブ
+@media screen and (max-width: 1024px) {
+  .container {
+  }
+
+  .new_card_data {
+    margin: 20px 3% 40px 3%;
+  }
+  .main {
+    margin: 0 3%;
+  }
+
+}
+
+// タブレットサイズ以下レスポンシブ
+@media screen and (max-width: 639px) {
+  .container {
+  }
+
+  .new_card_data {
+    margin: 15px 2% 20px 2%;
+  }
+  .main {
+    margin: 0 2%;
+  }
+
+}
