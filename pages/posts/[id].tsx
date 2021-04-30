@@ -83,7 +83,7 @@ export default function Post({ postData, newCardData }: Props) {
             {/* XSSの危険性がある為、入力内容を表示する際にはサニタイズが必須
             今回は自分が作成したmdファイルのみを表示させるため、問題なし */}
             <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-            {postData.contentHtml}
+            {/* {postData.contentHtml} */}
           </div>
         </article>
       </section>
