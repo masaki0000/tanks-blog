@@ -1,1 +1,11 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+## タイトル
+Tank's Blog
+
+## 概要
+ブログサイトです。
+プログラミングを学習する中で詰まった事や、自分の趣味に関する事を書き溜める目的で作成しました。
+SSGを利用しており、ブログの詳細ページはgetStaticPathsを利用した動的ページ生成を行っています。
+特定ディレクトリ下のMarkdownファイルを読み取り、ブログページを生成しています。
+
+## URL
+[サイトURL](https://tanks-blog.vercel.app/)

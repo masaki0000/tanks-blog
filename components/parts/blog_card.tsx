@@ -6,7 +6,6 @@ import utilStyles from '../../styles/utils.module.scss'
 
 type Props = {
   newCard?: boolean,
-  // newCard: string,
 
   postCardData: {
     id: string
@@ -20,7 +19,6 @@ type Props = {
 const setSize = ( newCard ) => {
 
   if (newCard) {
-    // console.log("newCardはあります！");
     return (
       styles.new_blog_card_wrapper
     )
@@ -57,9 +55,7 @@ const setImage = ( image ) => {
 }
 
 export default function BlogCard({ postCardData, newCard }: Props) {
-  // console.log("newCardは" + newCard)
   return (
-    // <div className={`${setSize(newCard)}`}>
     <div className={`${styles.blog_card_wrapper} ${setSize(newCard)}`}>
       <div className={styles.blog_card}>
 
@@ -69,8 +65,6 @@ export default function BlogCard({ postCardData, newCard }: Props) {
               <Image
                 className={styles.image}
                 src={`/images/${setImage(postCardData.image)}`}
-                // height={10}
-                // width={10}
                 layout='fill'
                 objectFit='contain'
                 alt="blog_img"
