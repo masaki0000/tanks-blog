@@ -1,10 +1,13 @@
 import Link from 'next/link'
 import style from '../../styles/parts_styles/header_tab.module.scss'
 
-const HeaderTab = () => {
 
+// ヘッダーのタブメニューコンポーネント
+export default function HeaderTab () {
   return (
+    // 各カテゴリの遷移メニュー
     <div className={style.header_tab}>
+
       <div className={style.link}>
         <Link href='/'>
           <a>TOP</a>
@@ -28,14 +31,7 @@ const HeaderTab = () => {
           <a>OTHER</a>
         </Link>
       </div>
-      
     
     </div>
   )
-
-
 }
-
-
-
-export default HeaderTab;

@@ -9,6 +9,8 @@ type Props = {
   totalCount: number
 }
 
+
+// ページングコンポーネント
 export const Pagination = ({ perPage,dirName,nowPage,totalCount }: Props) => {
 
   const range = (start, end) =>
@@ -26,14 +28,16 @@ export const Pagination = ({ perPage,dirName,nowPage,totalCount }: Props) => {
             
             // 1ページ目
             } else if (number === 1) {
-
+              
+              // 全カテゴリ(TOPカテゴリ)
               if (dirName === 'top') {
                 return (
                   <Link href={ `/`}>
                     <a>{number}</a>
                   </Link>
                 )
-              // program/gadget/otherタブいずれか
+              
+              // TOP以外の各カテゴリ
               } else {
                 return (
                   <Link href={ `/category/${dirName}/`}>
@@ -42,8 +46,10 @@ export const Pagination = ({ perPage,dirName,nowPage,totalCount }: Props) => {
                 )
               }
             
+            // 2ページ目以降
             } else {
 
+              // 全カテゴリ(TOPカテゴリ)
               if (dirName === 'top') {
                 return (
                   <Link
@@ -52,29 +58,19 @@ export const Pagination = ({ perPage,dirName,nowPage,totalCount }: Props) => {
                     <a>{number}</a>
                   </Link>
                 )
-
+              
+              // TOP以外の各カテゴリ
               } else {
                 return (
-                  <Link
-                    href={ `/category/${dirName}/page/${number}`}
-                  >
+                  <Link href={ `/category/${dirName}/page/${number}`}>
                     <a>{number}</a>
                   </Link>
                 )
               }
-              
             }
           })()}
         </li>
-
       ))}
     </ul>
-  );
-};
-
-// {allPostsData.map(( postCardData ) => (
-//   (() => {
-//     if (postCardData.category === 'Other')
-//       return <BlogCard postCardData={ postCardData } />
-//   })()
-// ))}
+  )
+}

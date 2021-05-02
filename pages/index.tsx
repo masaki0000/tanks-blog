@@ -11,9 +11,8 @@ import { Pagination } from '../components/parts/pagination';
 export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData()
   const totalCount = allPostsData.length
-  // 新着欄表示用
+  // 新着欄表示用のデータを取得
   const newCardData = getNewData({allPostsData})
-
   return {
     props: {
       allPostsData,
@@ -43,9 +42,11 @@ type Props = {
   }[]
 }
 
-export default function Home({ allPostsData, totalCount, newCardData }: Props) {
 
+// トップページ(全カテゴリーのブログ一覧)の１ページ目
+export default function Home({ allPostsData, totalCount, newCardData }: Props) {
   return (
+    // レイアウト汎用コンポーネント
     <Layout
       home 
       newCardData={newCardData}
@@ -55,7 +56,7 @@ export default function Home({ allPostsData, totalCount, newCardData }: Props) {
       </Head>
 
       <section className={`${utilStyles.util_cnt_wrap}`}>
-        
+        {/* パンくずリスト */}
         <BreadCrumbs 
           lists={[
             {
@@ -69,12 +70,11 @@ export default function Home({ allPostsData, totalCount, newCardData }: Props) {
           ]}
         />
 
+        {/* カテゴリ名(全カテゴリの為TOP) */}
         <h2 className={utilStyles.util_container_name}>TOP</h2>
         
+        {/* ブログ一覧表示 */}
         <div className={utilStyles.util_container}>
-          {/* {allPostsData.map(( postCardData ) => (
-            <BlogCard postCardData={ postCardData } />
-          ))} */}
           {allPostsData.map(( postCardData, i ) => (
             (() => {
               if (i < perPage && i < totalCount) {
@@ -89,6 +89,7 @@ export default function Home({ allPostsData, totalCount, newCardData }: Props) {
           ))}
         </div>
 
+        {/* ページング処理 */}
         <Pagination
           perPage={perPage}
           dirName={'top'}

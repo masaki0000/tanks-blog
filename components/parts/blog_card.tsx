@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../../styles/parts_styles/blog_card.module.scss'
-import utilStyles from '../../styles/utils.module.scss'
 
 
 type Props = {
@@ -16,8 +15,8 @@ type Props = {
   }
 }
 
+// 新着欄用のclassName生成
 const setSize = ( newCard ) => {
-
   if (newCard) {
     return (
       styles.new_blog_card_wrapper
@@ -25,8 +24,8 @@ const setSize = ( newCard ) => {
   }
 }
 
+// 各カテゴリ用のclassName生成
 const setColor = ( category ) => {
-
   if (category === 'program') {
     return (
       styles.program_color
@@ -42,6 +41,7 @@ const setColor = ( category ) => {
   }
 }
 
+// ブログのサムネイル画像設定
 const setImage = ( image ) => {
   if (image) {
     return (
@@ -54,11 +54,14 @@ const setImage = ( image ) => {
   }
 }
 
+
+// ブログ一覧の各ブログ(ブログカード)のコンポーネント
 export default function BlogCard({ postCardData, newCard }: Props) {
   return (
     <div className={`${styles.blog_card_wrapper} ${setSize(newCard)}`}>
       <div className={styles.blog_card}>
-
+        
+        {/* サムネイル画像 */}
         <Link href={`/posts/${postCardData.id}`}>
           <a className={styles.card_img_wrapper}>
             <div className={styles.card_img}>
@@ -73,6 +76,7 @@ export default function BlogCard({ postCardData, newCard }: Props) {
           </a>
         </Link>
 
+        {/* ブログのタイトル(＋日付) */}
         <div className={`${styles.card_text} ${setColor(postCardData.category)}`}>
           <Link href={`/posts/${postCardData.id}`}>
             <a className={styles.card_text_title}>

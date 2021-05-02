@@ -1,3 +1,4 @@
+// 全体のスタイル設定用
 import '../styles/global.css'
 import { AppProps } from 'next/app'
 

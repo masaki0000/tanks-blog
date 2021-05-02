@@ -6,10 +6,11 @@ import Link from 'next/link'
 import NewCard from './parts/new_card'
 import Header from './header'
 import Footer from './footer'
-import { useState } from 'react'
 
-const name = 'testName'
+// ブログ名
 export const siteTitle = 'TanksBlog'
+
+// 各ページのブログカード表示数
 export const perPage: number = 4
 
 type Props = {
@@ -23,20 +24,14 @@ type Props = {
   }[]
 }
 
+
+// 汎用レイアウトコンポーネント
 export default function Layout({
   children,
   home,
   newCardData
 }: Props) 
 {
-  // console.log ("newCardDataの値は" + {newCardData})
-  // const [cardData, setData] = useState()
-  // const hasNewData = (cardData) => {
-  //   if ({cardData}) {
-  //     setData(cardData)
-  //   }
-  // }
-  // () => hasNewData({newCardData})
   return (
     <div className={styles.container}>
       <Head>
@@ -51,19 +46,17 @@ export default function Layout({
         <meta property="og:type" content="blog" />
         <meta name="og:site_name" content={siteTitle} />
         <meta name="og:title" content={siteTitle} />
-        
         <meta
           property="og:image"
-          content={"/big_theme.png"}
-          // content={`https://og-image.vercel.app/${encodeURI(
-          //   siteTitle
-          // )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
+          content={"/images/big_theme.png"}
         />
-        {/* <meta name="twitter:card" content="summary_large_image" /> */}
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
+      {/* ヘッダー */}
       <Header />
 
+      {/* ブログの新着欄 */}
       <div className={styles.new_card_data}>
         {
           (() => {
@@ -77,11 +70,13 @@ export default function Layout({
           })()
         }
       </div>
-
+      
+      {/* 各ページのコンテンツ */}
       <main className={styles.main}>
 
         {children}
         
+        {/* ブログ詳細ページのとき、バックボタン */}
         {!home && (
           <div className={styles.backToHome}>
             <Link href="/">
@@ -91,7 +86,7 @@ export default function Layout({
         )}
       </main>
       
-
+      {/* フッター */}
       <Footer />
     </div>
   )

@@ -69,7 +69,6 @@ export function getNewData ({allPostsData}: gNDProps) {
 // ブログ詳細ページ用パス取得
 export function getAllPostIds() {
   const fileNames = fs.readdirSync(postsDirectory)
-
   return fileNames.map(fileName => {
     return {
       params: {
@@ -159,15 +158,7 @@ export function filterData({selectCategory, postsData}: fDProps) {
   const filterData = postsData.filter(
     (postsData => postsData.category === selectCategory)
   )
-  // ソート
   return ( 
-    // filterData.sort((a, b) => {
-    //   if (a.date < b.date) {
-    //     return 1
-    //   } else {
-    //     return -1
-    //   }
-    // })
     filterData
   )
 }
@@ -175,33 +166,33 @@ export function filterData({selectCategory, postsData}: fDProps) {
 
 
 
-// 未使用※制作中
+// 未使用
 // 動的ルーティング(2ページ以降)のpath取得
-type gProps = {
-  postsData: {
-    id: string
-    title: string
-    date: string
-    category: string
-    image?: string
-  }[]
-}
-export function getPagePathsTest ({postsData}: gProps){
+// type gProps = {
+//   postsData: {
+//     id: string
+//     title: string
+//     date: string
+//     category: string
+//     image?: string
+//   }[]
+// }
+// export function getPagePathsTest ({postsData}: gProps){
   
-  const totalCount = postsData.length
-  const pageCount = Math.ceil(totalCount / perPage)
-  const fileNames: string[] = []
-  for (let i = 2; i <= pageCount; i++) {
-    fileNames.push(String(i))
-  }
+//   const totalCount = postsData.length
+//   const pageCount = Math.ceil(totalCount / perPage)
+//   const fileNames: string[] = []
+//   for (let i = 2; i <= pageCount; i++) {
+//     fileNames.push(String(i))
+//   }
 
-  return (
-    fileNames.map(fileName => {
-      return {
-        params: {
-          id: fileName
-        }
-      }
-    })
-  )
-}
+//   return (
+//     fileNames.map(fileName => {
+//       return {
+//         params: {
+//           id: fileName
+//         }
+//       }
+//     })
+//   )
+// }
