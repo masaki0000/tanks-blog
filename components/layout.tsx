@@ -48,7 +48,7 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta
           property="og:image"
-          content={"/images/big_theme.png"}
+          content={"https://tanks-blog.vercel.app/images/big_theme.png"}
         />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
